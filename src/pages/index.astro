@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Nicolas Camacho">
+	<main>
+		<div class="container">
+			<div class="header-text">
+				<span class="normal-text">Hi everyone, my name is</span>
+				<h1 class="graphic-text">NICOLAS CAMACHO</h1>
+				<span class="normal-text">I'm a </span>
+				<h2 class="graphic-text">Software Engeenier</h2>
+				<span class="normal-text">Currently focus on frontend development</span>
+			</div>
+			<div class="image-container">
+				<img src="/characterrender.png" alt="Principal Image">
+			</div>
+			<div class="footer-container">
+				<h1 class="graphic-text">Find me in other platforms</h1>
+				<div class="platforms-container">
+					<a target="_blank" class="normal-text" href="https://www.linkedin.com/in/nicolas-camacho-aguilar/">Linkedin</a>
+					<span class="normal-text">/</span>
+					<a target="_blank" class="normal-text" href="https://github.com/nicolas-camacho">Github</a>
+					<span class="normal-text">/</span>
+					<a target="_blank" class="normal-text" href="https://www.instagram.com/n_icolas.jpg/">Instagram</a>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.container {
+		width: 100%;
+		max-width: 600px;
+		padding: 2rem 2rem;
+		border: 25px solid var(--color-four);
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background-color: var(--color-three);
+	}
+
+	.header-text {
+		text-align: center;
+	}
+
+	@media (max-width: 600px) {
+		.header-text {
+			text-align: left;
+		}
+	}
+
+	.graphic-text {
+		font-weight: bolder;
+		color: #ffffff;
+		font-family: var(--font-unbounded);
+		margin: 5px;
+		letter-spacing: 0.1rem;
+	}
+
+	.image-container {
+		width: 100%;
+		display: flex;
+		margin: 3rem 0;
+
+	}
+
+	.image-container > img {
+		width: 100%;
+		max-width: 900px;
+		height: auto;
+	}
+
+	.footer-container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+</style>

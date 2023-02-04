@@ -1,0 +1,59 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/characterrender.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@200&family=Unbounded:wght@600&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<header>
+		<nav>
+			<a class="normal-text" href="/">Home</a>
+			<span class="normal-text"> / </span>
+			<a class="normal-text" href="/projects">Projects</a>
+		</nav>
+	</header>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--color-one: #E26A58;
+		--color-two: #EEC050;
+		--color-three: #78C087;
+		--color-four: #FBFBFC;
+
+		--font-martian: 'Martian Mono', monospace;
+		--font-unbounded: 'Unbounded', cursive;
+	}
+
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: var(--color-one);
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		padding: 1rem;
+	}
+
+	.normal-text {
+		color: #ffffff;
+		font-family: var(--font-martian);
+		margin: 5px;
+	}
+</style>
