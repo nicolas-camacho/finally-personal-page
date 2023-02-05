@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Nicolas Camacho - About">
+    <main>
+        <div class="container">
+            <div class="image-container">
+                <img src="/profilerender.png" alt="Principal Image">
+            </div>
+            <div>
+                <h1 class="graphic-text">About</h1>
+                <p class="normal-text separated">
+                    I'm a software engeenier from Colombia, mainly focused on frontend development.
+                </p>
+                <p class="normal-text separated">
+                    I'm currently working as a frontend developer at 
+                    <a class="normal-text" href="https://www.zemoga.com/" target="_blank"><strong>Zemoga</strong></a>, 
+                    participating in different projects for different clients.
+                </p>
+                <p class="normal-text separated">
+                    Most of my profesional experience is in frontend development, but I also have experience in backend development,
+                    and some server side utilities.
+                </p>
+                <p class="normal-text separated">
+                    You can find some of my knowledge in technologies below.
+                </p>
+                <div class="separated">
+                    <h2 class="graphic-text">Technologies</h2>
+                    <p class="normal-text separated">
+                        HTML, CSS, Javascript, Typescript, React, Node, Git, Linux, Python, Django, PHP, Go and more.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .container {
+        width: 100%;
+		max-width: 900px;
+		padding: 2rem 2rem;
+		border: 25px solid var(--color-four);
+		display: flex;
+		background-color: var(--color-three);
+    }
+
+    .separated {
+        line-height: 1.2rem;
+        margin: 1rem 5px;
+    }
+
+    .image-container {
+		width: 100%;
+		display: flex;
+		margin: 0 2rem;
+	}
+
+    @media (max-width: 600px) {
+		.container {
+            flex-wrap: wrap;
+        }
+        
+        .image-container {
+			margin: 0;
+		}
+	}
+
+	.image-container > img {
+		width: 100%;
+		max-width: 900px;
+        height: fit-content;
+	}
+</style>

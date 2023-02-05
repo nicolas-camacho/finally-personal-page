@@ -22,6 +22,8 @@ const { title } = Astro.props;
 		<nav>
 			<a class="normal-text" href="/">Home</a>
 			<span class="normal-text"> / </span>
+			<a class="normal-text" href="/about">About</a>
+			<span class="normal-text"> / </span>
 			<a class="normal-text" href="/projects">Projects</a>
 		</nav>
 	</header>
@@ -51,9 +53,23 @@ const { title } = Astro.props;
 		padding: 1rem;
 	}
 
+	main {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.normal-text {
 		color: #ffffff;
 		font-family: var(--font-martian);
 		margin: 5px;
+	}
+
+	.graphic-text {
+		font-weight: bolder;
+		color: #ffffff;
+		font-family: var(--font-unbounded);
+		margin: 5px;
+		letter-spacing: 0.1rem;
 	}
 </style>
