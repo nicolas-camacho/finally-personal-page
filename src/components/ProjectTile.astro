@@ -1,0 +1,68 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+	image: string;
+	url?: string;
+}
+
+const { title, description, image, url } = Astro.props;
+---
+
+<li>
+	<img src={image} />
+	<div>
+		<h2 class="graphic-text">{title}</h2>
+		<p class="normal-text">{description}</p>
+		<a href={url}>
+			<strong>See details</strong>
+		</a>
+	</div>
+</li>
+
+<style>
+	li {
+        display: flex;
+        padding: 2rem 0;
+        border-bottom: 2px dashed var(--color-three);
+    }
+
+	li > img {
+        max-width: 320px;
+        max-height: 240px;
+        object-fit: cover;
+        margin-right: 1rem;
+    }
+
+    li > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    li > div > a {
+        margin-top: auto;
+        align-self: flex-end;
+        font-family: var(--font-martian);
+        color: #000000;
+        text-decoration: wavy underline;
+    }
+
+    li:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    li:nth-child(even) > div > a {
+        align-self: flex-start;
+    }
+
+    @media (max-width: 600px) {
+		li {
+            flex-wrap: wrap;
+        }
+
+        li > div > a {
+            align-self: flex-start;
+        }
+	}
+</style>

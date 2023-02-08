@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectTile from "../../components/ProjectTile.astro";
+
+const projects = await Astro.glob("./*.md");
+---
+
+<Layout title="Nicolas Camacho - Projects">
+    <main>
+        <div class="container">
+            <h1 class="graphic-text">Projects</h1>
+            <ul>
+                {projects.map((project) => {
+                    const { 
+                        title, 
+                        description, 
+                        image 
+                    } = project.frontmatter;
+                    return (
+                        <ProjectTile
+                            title={title}
+                            description={description}
+                            image={image}
+                            url={project.url}
+                        />
+                    );
+                })}
+            </ul>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .container {
+		width: 100%;
+		max-width: 900px;
+		border: 25px solid var(--color-four);
+		display: flex;
+		flex-direction: column;
+		background-color: var(--color-four);
+	}
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+</style>
